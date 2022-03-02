@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.dispatch import receiver
+from django.shortcuts import get_object_or_404, render
 from .models import Receita
 
 
@@ -12,5 +13,10 @@ def index(request):
     }
     return render(request,'index.html', dados)
 
-def receitas(request):
-    return render(request, 'receita.html')
+def receitas(request, receita_id):
+    receita= get_object_or_404(Receita, pk=receita_id)
+    receita_a_exibir={
+        'receita':receita
+    }
+
+    return render(request, 'receita.html', receita_a_exibir)

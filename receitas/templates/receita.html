@@ -68,16 +68,19 @@
 
                 <div class="row">
                     <div class="col-12 col-md-8">
-                        <div class="receipe-headline my-5">
-                            <span>30 de Fevereiro, 2000</span>
-                            <h2>Nome da receita</h2>
-                            <div class="receipe-duration">
-                                <h6>Preparo: 15 minutos</h6>
-                                <h6>Rendimento: 2 porçoes</h6>
-                                <h6>Categoria: categoria</h6>
-                                <h6>Por: Pessoa</h6>
+                        {%if receita%}
+                            <div class="receipe-headline my-5">
+                                <span>{{receita.data_receita}}</span>
+                                <h2>{{receita.nome_receita}}</h2>
+                                <div class="receipe-duration">
+                                    <h6></h6>
+                                    <h6>{{receita.nome_receita}}</h6>
+                                    <h6>{{receita.categoria}}</h6>
+                                    <!--<h6>Por: Pessoa</h6>-->
+                                </div>
                             </div>
-                        </div>
+                        {%else%}
+                        {%endif%}
                     </div>
 
                 <div class="row">
@@ -101,6 +104,6 @@
                 </div>
                 <!-- Ingredientes -->
 
-                {%include 'partials/footer.html'}
+                {%include 'partials/footer.html'%}
 
                 {%endblock%}

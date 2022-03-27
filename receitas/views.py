@@ -9,7 +9,7 @@ from .models import Receita
 
 def index(request):
     dados= {
-        'receitas':Receita.objects.filter(publicada=True)
+        'receitas':Receita.objects.filter(publicada=True).order_by('data_receita')
     }
     return render(request,'index.html', dados)
 

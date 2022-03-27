@@ -76,6 +76,7 @@
                                     <h6></h6>
                                     <h6>Rendimento:{{receita.rendimento}}</h6>
                                     <h6>categoria:{{receita.categoria}}</h6>
+                                    <h6> por: {{receita.pessoa.nome }}</h6>
                                     <!--<h6>Por: Pessoa</h6>-->
                                 </div>
                             </div>
@@ -83,7 +84,7 @@
                         {%endif%}
                     </div>
 
-                <div class="row">
+                
                     <div class="col-12 col-lg-8">
                         <!-- Single Preparation Step -->
                         <h4>Modo de Preparo</h4>
@@ -102,7 +103,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                
                 <!-- Ingredientes -->
 
                 {%include 'partials/footer.html'%}

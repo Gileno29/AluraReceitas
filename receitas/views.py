@@ -22,3 +22,10 @@ def receitas(request, receita_id):
     }
     
     return render(request, 'receita.html', receita_a_exibir)
+
+def testefiltro(request):
+    receitas= {
+        'receitas': Receita.objects.order_by('data_receita')
+    }
+    
+    return  render(request,'teste_vfiltros.html',receitas)
